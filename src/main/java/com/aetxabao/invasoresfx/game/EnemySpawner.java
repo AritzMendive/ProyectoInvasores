@@ -54,9 +54,12 @@ public class EnemySpawner {
                 enemies = crearEnemigosNivelPaquito(gameRect);
                 break;
             case 3:
-            default:
+
                 enemies = crearEnemigosNivelPulpo(gameRect);
                 break;
+            case 4:
+            default:
+                enemies = crearEnemigosNivelPrueba(gameRect);
         }
         return enemies;
     }
@@ -126,6 +129,17 @@ public class EnemySpawner {
     }
 
     public static List<AEnemy> crearEnemigosNivelPulpo(Rect gameRect) {
+        List<AEnemy> enemies = new ArrayList<>();
+        enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 0, 0, vx, 0, E_SHOT_GUN));
+        enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 1, -vx, 0, E_SHOT_GUN));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 0, 0, vx, vy, E_SHOT_NOTHING));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 0, -vx, vy, E_SHOT_NOTHING));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 3, 0, -vx, vy, E_SHOT_NOTHING));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 4, 0, vx, vy, E_SHOT_NOTHING));
+        return enemies;
+    }
+
+    public static List<AEnemy> crearEnemigosNivelPrueba(Rect gameRect) {
         List<AEnemy> enemies = new ArrayList<>();
         enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 0, 0, vx, 0, E_SHOT_GUN));
         enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 1, -vx, 0, E_SHOT_GUN));
