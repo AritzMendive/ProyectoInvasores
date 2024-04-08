@@ -9,6 +9,8 @@ import java.net.URL;
 
 public final class AppConsts {
 
+    //a
+
     //region Logs
     public static final URL LOG4J_PROPERTIES = Main.class.getResource("log4j.properties");
     public static final String SYSTEM_PROPERTY = "userApp.userName";
