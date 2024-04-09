@@ -79,9 +79,12 @@ public class EnemySpawner {
                 e = new EnemyShipDiagonal(gameRect, enemyImage, TICKSxFRAME);
                 break;
             case E_NORMAL:
-            default:
                 e = new EnemyShip(gameRect, enemyImage, TICKSxFRAME);
                 break;
+            case E_BARRIER:
+            default:
+            e = new EnemigoConBarrera(gameRect, enemyImage, TICKSxFRAME);
+            break;
         }
         if (shot == E_SHOT_GUN){
             e.setWeapon(new Gun());
@@ -141,11 +144,9 @@ public class EnemySpawner {
 
     public static List<AEnemy> crearEnemigosNivelPrueba(Rect gameRect) {
         List<AEnemy> enemies = new ArrayList<>();
-        enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 0, 0, vx, 0, E_SHOT_GUN));
-        enemies.add(createEnemyShip(E_NORMAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 1, -vx, 0, E_SHOT_GUN));
-        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 0, 0, vx, vy, E_SHOT_NOTHING));
         enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 0, -vx, vy, E_SHOT_NOTHING));
-        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 3, 0, -vx, vy, E_SHOT_NOTHING));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 7, 0, -vx, vy, E_SHOT_NOTHING));
+        enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 4, 0, vx, vy, E_SHOT_NOTHING));
         enemies.add(createEnemyShip(E_DIAGONAL, ENEMYSHIP_SPRITE_IMAGE_2, gameRect, 4, 0, vx, vy, E_SHOT_NOTHING));
         return enemies;
     }
