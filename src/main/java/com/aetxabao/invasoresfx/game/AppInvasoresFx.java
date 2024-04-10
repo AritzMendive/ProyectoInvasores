@@ -134,6 +134,7 @@ public class AppInvasoresFx extends Application {
                 case D -> dPressed.set(false);
                 case ENTER, SPACE -> enterOrSpaceAction();
                 case ESCAPE -> appStatus.quit();
+                case P -> gameManager.nextLevel();
             }
         });
     }
